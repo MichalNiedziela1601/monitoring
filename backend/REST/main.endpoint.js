@@ -8,7 +8,7 @@ module.exports = function (server)
 
 
     server.route({
-        method: 'GET', path: '/', handler: function (req, res)
+        method: 'GET', path: '/api/stations', handler: function (req, res)
         {
             let stations = {
                 wodne: [], opadowe: []
@@ -42,16 +42,11 @@ module.exports = function (server)
                         if (result[2][i].id_ppwr === stations.opadowe[i].id_ppwr) {
 
                             stations.opadowe[i].obsadzona = 1;
-                            console.log(stations.opadowe[i]);
                         }
                     }
                 }
                 return res(stations);
-            })
-                    .on('end', function(err){
-                        mysql.end();
-                    });
-
+            });
 
         }
     });

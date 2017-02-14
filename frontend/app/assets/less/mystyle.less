@@ -1,28 +1,40 @@
+@main-color: #DBD4BA;
+
 body {
-  background-color: #DBD4BA;
+  background-color: @main-color;
 }
+
 footer {
   margin-top: 4em;
+}
+
+.center {
 }
 .obsadzona {
   padding-left: 2em;
   font-weight: bold;
-  color: green;
+  color: green
 }
+
 .nieobsadzona {
   padding-left: 2em;
-  color: red;
+  color: red
 }
+
 .stacje {
   margin-top: 2em;
 }
+
 .stacja {
   font-size: 14px;
   padding-top: 0.3em;
+
+
+  a {
+    color: black;
+    &:hover {
+      color: black;
+    }
+  }
 }
-.stacja a {
-  color: black;
-}
-.stacja a:hover {
-  color: black;
-}
+

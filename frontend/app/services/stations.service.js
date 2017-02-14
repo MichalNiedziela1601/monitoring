@@ -3,8 +3,7 @@
     function StationsFactory($http){
 
         function getStations(){
-            return $http.get('http://localhost:8080/').then(function(res){
-                console.log(res.data);
+            return $http.get('http://localhost:8080/api/stations').then(function(res){
                 return res.data;
             })
         }

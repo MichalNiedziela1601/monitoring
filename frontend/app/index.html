@@ -2,22 +2,34 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Monitoring Powodziowy</title>
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/styles/mystyle.css">
 </head>
 <body ng-app="monitoring">
 <div ng-view class="container"></div>
 
+
+<footer>
+    <div class="text-center ">
+        <strong><p>System Monitoringu Powodziowego dostarczany jest przez firmę:</p>
+    <p>RWD PROSPECT Sp. z o.o. &nbsp; &nbsp;      ul. Klikowska 50, 33-100 Tarnów  &nbsp; &nbsp;
+            <a href="http://www.prospect.pl">www.prospect.pl</a>  &nbsp; &nbsp;
+        e-mail:   <a ng-href="mailto:monitoring@prospect.pl" target="_self">monitoring@prospect.pl</a></p></strong></div>
+</footer>
+<!-- library-->
 <script src="bower_components/angular/angular.min.js"></script>
 <script src="bower_components/angular-route/angular-route.min.js"></script>
 
-
+<!--config-->
 <script src="app.module.js"></script>
 <script src="app.routes.js"></script>
-
+<!--controllers-->
 <script src="mainView/main-view.controller.js"></script>
-
+<script src="punkt_pomiarowy/punkt-pomiarowy.controller.js"></script>
+<!--services-->
 <script src="services/stations.service.js"></script>
+<!--components-->
+<script src="component/menu-left/menu-left.component.js"></script>
 </body>
 </html>

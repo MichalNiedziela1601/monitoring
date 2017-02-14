@@ -1,21 +1,10 @@
 <div class="row">
-    <div>Stacje wodne:</div>
-    <div ng-repeat="station in mainViewCtrl.stations.wodne">
-
-        <div ng-if="station.id_ppwr !== 'SIBY'">* {{station.miejsce}}
-            <div ng-switch="station.obsadzona">
-                <div ng-switch-when="1" class="obsadzona">Stacja obsadzona</div>
-                <div ng-switch-when="0" class="nieobsadzona">Stacja nieobsadzona</div>
-            </div>
-        </div>
+    <div class="col-lg-3">
+        <menu-stations stations="mainViewCtrl.stations"></menu-stations>
     </div>
 
-    <div>Stacje opadowe:</div>
-    <div ng-repeat="station in mainViewCtrl.stations.opadowe">
-        <div>* {{station.miejsce}}</div>
-        <div ng-switch="station.obsadzona">
-            <div ng-switch-when="1" class="obsadzona">Stacja obsadzona</div>
-            <div ng-switch-when="0" class="nieobsadzona">Stacja nieobsadzona</div>
-        </div>
+    <div class="col-lg-9">
+        <a href="/pomiarowy">Punk pomiarowy</a>
+        <simple-component hero="mainViewCtrl.hero"></simple-component>
     </div>
 </div>

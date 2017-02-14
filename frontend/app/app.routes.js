@@ -14,6 +14,11 @@
                     controller: 'MainViewController',
                     controllerAs: 'mainViewCtrl'
         })
+                        .when('/pomiarowy/:id', {
+            templateUrl: 'punkt_pomiarowy/punkt-pomiarowy.tpl.html',
+            controller: 'PunktPomiarowyController',
+            controllerAs: 'punktPomiarCtrl'
+        })
                 .otherwise({ redirectTo: '/'});
     }
     angular.module('monitoring')

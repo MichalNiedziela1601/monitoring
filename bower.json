@@ -1,0 +1,23 @@
+{
+  "name": "makemehapi",
+  "description": "",
+  "main": "index.js",
+  "authors": [
+    "Michal Niedziela <MichalNiedziela1601@labnoratory.com>"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/MichalNiedziela1601/monitoring",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "frontend/app/bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "1.6.2",
+    "angular-route": "1.6.2",
+    "bootstrap": "3.3.7"
+  }
+}
