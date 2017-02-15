@@ -7,6 +7,17 @@
     <link rel="stylesheet" href="assets/styles/mystyle.css">
 </head>
 <body ng-app="monitoring">
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/pl_PL/sdk.js#xfbml=1&version=v2.8";
+    fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+
 <div ng-view class="container"></div>
 
 
@@ -18,18 +29,24 @@
         e-mail:   <a ng-href="mailto:monitoring@prospect.pl" target="_self">monitoring@prospect.pl</a></p></strong></div>
 </footer>
 <!-- library-->
+<script src="bower_components/jquery/dist/jquery.min.js"></script>
 <script src="bower_components/angular/angular.min.js"></script>
 <script src="bower_components/angular-route/angular-route.min.js"></script>
-
+<script src="bower_components/lodash/dist/lodash.js"></script>
+<script src="bower_components/angular-simple-logger/dist/angular-simple-logger.min.js"></script>
+<script src="bower_components/angular-google-maps/dist/angular-google-maps.min.js"></script>
 <!--config-->
 <script src="app.module.js"></script>
+<script src="app.config.js"></script>
 <script src="app.routes.js"></script>
+
 <!--controllers-->
 <script src="mainView/main-view.controller.js"></script>
-<script src="punkt_pomiarowy/punkt-pomiarowy.controller.js"></script>
+<script src="measurePoint/measurePoint.controller.js"></script>
 <!--services-->
 <script src="services/stations.service.js"></script>
 <!--components-->
 <script src="component/menu-left/menu-left.component.js"></script>
+
 </body>
 </html>
