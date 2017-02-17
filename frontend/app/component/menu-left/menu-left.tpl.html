@@ -1,9 +1,24 @@
-<div>
-    <div class="stacje">
-        <div><p class="lead">Stacje wodne:</p></div>
-        <div ng-repeat="station in $ctrl.stations.wodne" class="stacja">
+<div id="menuSide">
+    <div class="panel panel-default">
+        <div class="panel-heading back-dark text-center"><p class="lead">Stacje wodne:</p></div>
+        <div class="panel-body back-darken">
+            <div ng-repeat="station in $ctrl.stations.wodne" class="stacja">
 
-            <div ng-if="station.id_ppwr !== 'SIBY'">
+                <div ng-if="station.id_ppwr !== 'SIBY'">
+                    <div><a ng-href="/measure/{{station.id_ppwr}}">{{$index+1}} {{station.miejsce}}</a></div>
+                    <div ng-switch="station.obsadzona">
+                        <div ng-switch-when="1" class="obsadzona">Stacja obsadzona</div>
+                        <div ng-switch-when="0" class="nieobsadzona">Stacja nieobsadzona</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="panel panel-default">
+        <div class="panel-heading back-dark text-center"><p class="lead">Stacje opadowe:</p></div>
+        <div class="panel-body back-darken">
+            <div ng-repeat="station in $ctrl.stations.opadowe" class="stacja">
                 <div><a ng-href="/measure/{{station.id_ppwr}}">{{$index+1}} {{station.miejsce}}</a></div>
                 <div ng-switch="station.obsadzona">
                     <div ng-switch-when="1" class="obsadzona">Stacja obsadzona</div>
@@ -13,28 +28,5 @@
         </div>
     </div>
 
-    <div class="stacje">
-        <div><p class="lead">Stacje opadowe:</p></div>
-        <div ng-repeat="station in $ctrl.stations.opadowe" class="stacja">
-            <div><a ng-href="/measure/{{station.id_ppwr}}">{{$index+1}} {{station.miejsce}}</a></div>
-            <div ng-switch="station.obsadzona">
-                <div ng-switch-when="1" class="obsadzona">Stacja obsadzona</div>
-                <div ng-switch-when="0" class="nieobsadzona">Stacja nieobsadzona</div>
-            </div>
-        </div>
-    </div>
 
-    <div class="pull-left"><div class="text-center">
-        <div style="padding-top: 30px">
-            <a href="http://www.monitoring.prospect.pl" style="padding: 3px 0; color: #3B5998;
-            font-family: 'Helvetica Neue',Helvetica,Arial,'lucida grande',tahoma,verdana,arial,sans-serif; font-size: 13px; font-weight: 700;
-            line-height: 16.6333px; text-align: left; text-decoration: none;">MONITORING POWODZIOWY</a></div>
-        <div style="padding-top: 20px"><fb:like href="http://www.monitoring.prospect.pl/"
-                                                layout="box_count" action="like" show_faces="true" share="true"></fb:like></div>
-        <div class="fb-page" data-href="https://www.facebook.com/rwdprospect" data-tabs="timeline" data-width="200" data-height="70"
-             data-small-header="true" data-adapt-container-width="true" data-hide-cover="true" data-show-facepile="false"><blockquote
-                cite="https://www.facebook.com/rwdprospect" class="fb-xfbml-parse-ignore">
-            <a href="https://www.facebook.com/rwdprospect">RWD PROSPECT</a></blockquote></div>
-    </div></div>
-    </div></div>
-</div>
+</div></div></div>

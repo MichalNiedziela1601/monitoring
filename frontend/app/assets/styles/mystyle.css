@@ -2,8 +2,24 @@ body {
   background-color: #DBD4BA;
 }
 footer {
-  margin-top: 4em;
-  margin-bottom: 2em;
+  padding-top: 4em;
+  padding-bottom: 2em;
+}
+.back-darken {
+  background-color: #c7bea2 !important;
+}
+.back-dark {
+  background-color: #b8b091 !important;
+}
+.back-main {
+  background-color: #DBD4BA !important;
+}
+.modal-content {
+  background-color: #DBD4BA;
+}
+.navbar {
+  border: none;
+  min-height: 4em;
 }
 .obsadzona {
   padding-left: 2em;

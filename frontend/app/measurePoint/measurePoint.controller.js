@@ -3,9 +3,9 @@
  */
 (function(){
     'use strict';
-    function MeasurePointController(){
+    function MeasurePointController($routeParams){
         var ctrl = this;
-        ctrl.pomiar = 123;
+        ctrl.id = $routeParams.id;
     }
     angular.module('monitoring')
         .controller('MeasurePointController', MeasurePointController);
