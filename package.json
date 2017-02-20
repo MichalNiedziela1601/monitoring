@@ -16,7 +16,10 @@
     "hapi": "16.1.0",
     "hapi-cors": "1.0.1",
     "http-proxy-middleware": "0.17.3",
-    "mysql": "2.13.0"
+    "inert": "4.1.0",
+    "morgan": "1.8.1",
+    "mysql": "2.13.0",
+    "node-gd": "1.4.0"
   },
   "devDependencies": {
     "bower": "1.8.0"

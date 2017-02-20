@@ -43,6 +43,8 @@
             StationsFactory.getStations().then(function (data)
             {
                 ctrl.stations = data;
+            }).catch(function(err){
+                console.log(err);
             });
         }
 

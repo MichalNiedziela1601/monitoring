@@ -20,6 +20,17 @@ footer {
 .navbar {
   border: none;
   min-height: 4em;
+  min-width: 100%;
+}
+.navbar-main {
+  padding: 3px 0;
+  color: #3B5998;
+  font-family: 'Helvetica Neue', Helvetica, Arial, 'lucida grande', tahoma, verdana, arial, sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 16.6333px;
+  text-align: left;
+  text-decoration: none;
 }
 .obsadzona {
   padding-left: 2em;
@@ -48,4 +59,20 @@ footer {
 }
 .angular-google-map-container {
   height: 600px;
+}
+@media only screen and (max-width: 768px) {
+  .mediaVisible {
+    display: none;
+  }
+}
+#menuAsideButton {
+  display: none;
+}
+@media only screen and (max-width: 768px) {
+  #menuAsideButton {
+    display: inline-block;
+    float: right;
+    margin-right: 1.5em;
+    margin-top: 1em;
+  }
 }
