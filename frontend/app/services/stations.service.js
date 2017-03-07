@@ -4,6 +4,7 @@
 
         function getStations(){
             return $http.get('/api/stations').then(function(res){
+                console.log(res);
                 return res.data;
             })
                     .catch(function(error){

@@ -35,61 +35,155 @@ footer {
 }
 
 .navbar-main {
-padding: 3px 0; color: #3B5998;
-          font-family: 'Helvetica Neue',Helvetica,Arial,'lucida grande',tahoma,verdana,arial,sans-serif; font-size: 13px; font-weight: 700;
-          line-height: 16.6333px; text-align: left; text-decoration: none;
+  padding: 3px 0; color: #3B5998;
+  font-family: 'Helvetica Neue',Helvetica,Arial,'lucida grande',tahoma,verdana,arial,sans-serif; font-size: 13px; font-weight: 700;
+  line-height: 16.6333px; text-align: left; text-decoration: none;
 }
 
 .obsadzona {
-padding-left: 2em;
-font-weight: bold;
-color: green
+  padding-left: 2em;
+  font-weight: bold;
+  color: green
 }
 
 .nieobsadzona {
-padding-left: 2em;
-color: red
+  padding-left: 2em;
+  color: red
 }
 
 .stacje {
-margin-top: 2em;
+  margin-top: 2em;
 }
 
 .stacja {
-font-size: 14px;
-padding-top: 0.3em;
+  font-size: 14px;
+  padding-top: 0.3em;
 
-a {
-  color: black;
-  &:hover {
+  a {
     color: black;
+    &:hover {
+      color: black;
+    }
   }
-}
 }
 
 .top-mar-2 {
-margin-top: 2em;
+  margin-top: 2em;
 }
 
 .angular-google-map-container {
-height: 600px;
+  height: 600px;
+  .responsive(767px, {
+    height: 350px
+  })
+}
+
+.no-padding {
+  .responsive(375px, { padding: 0;
+  })
 }
 
 .responsive(@maxWidth, @rules) {
-@media only screen and (max-width: @maxWidth) {
-  @rules();
-}
+  @media only screen and (max-width: @maxWidth) {
+    @rules();
+  }
 }
 
 .mediaVisible {
-.responsive(768px, { display: none; })
+  .responsive(767px, { display: none; })
 }
 
 #menuAsideButton {
-display: none;
-.responsive(768px, {
-  display: inline-block;
-  float: right; margin-right: 1.5em;
-  margin-top: 1em;
-})
+  display: none;
+  .responsive(767px, {
+    display: inline-block;
+    float: right; margin-right: 1.5em;
+    margin-top: 1em;
+  })
 }
+
+thead {
+  th {
+    vertical-align: middle;
+    text-align: center;
+  }
+}
+
+.border() {
+  border: 2px solid black !important;
+}
+.table {
+  thead, tbody, tr, td, th {
+    .border();
+    text-align: center;
+  }
+}
+
+.generate-pd-top(@n, @i: 0) when (@i =< @n) {
+  .pd-top-@{i} {
+    padding-top: (@i * 10px);
+  }
+  .generate-pd-top(@n, (@i + 1));
+}
+
+.generate-pd-top(8);
+
+.generate-mar-top(@n, @i: 0) when (@i =< @n) {
+  .mar-top-@{i} {
+    margin-top: (@i * 10px);
+  }
+  .generate-mar-top(@n, (@i + 1));
+}
+
+.generate-mar-top(8);
+
+.generate-mar-bottom(@n, @i: 0) when (@i =< @n) {
+  .mar-bottom-@{i} {
+    margin-bottom: (@i * 10px);
+  }
+  .generate-mar-bottom(@n, (@i + 1));
+}
+
+.generate-mar-bottom(8);
+.poziom_ostrz {
+  background-color: #fa0;
+  color: #000;
+}
+
+.poziom_alarm {
+  background-color: #f00;
+  color: #000;
+}
+
+.wykres_h1 {
+  height: 270px;
+  max-width: 100%;
+}
+
+.image-contener {
+  > img {
+    max-height: 350px;
+    width: 100%;
+  }
+}
+
+.image-contener2 {
+  max-width: 80% !important;
+}
+
+.panel-heading {
+  padding: 4px 15px 0px 15px;
+}
+
+.menu {
+  li {
+    margin-bottom: 4px;
+    a {
+      color: black;
+
+    }
+  }
+}
+
+
+

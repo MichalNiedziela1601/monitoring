@@ -9,6 +9,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "bluebird": "3.5.0",
     "express": "4.14.1",
     "good": "7.1.0",
     "good-console": "6.4.0",
@@ -17,9 +18,11 @@
     "hapi-cors": "1.0.1",
     "http-proxy-middleware": "0.17.3",
     "inert": "4.1.0",
+    "lodash": "4.17.4",
     "morgan": "1.8.1",
     "mysql": "2.13.0",
-    "node-gd": "1.4.0"
+    "node-gd": "1.4.0",
+    "promise-mysql": "3.0.0"
   },
   "devDependencies": {
     "bower": "1.8.0"
