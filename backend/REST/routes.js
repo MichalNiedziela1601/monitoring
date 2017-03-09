@@ -5,5 +5,5 @@ const przekrojEndpoint = require('./przekroj.endpoint');
 
 module.exports = function(server){
     stationsEndpoint(server);
-    przekrojEndpoint(server);
+    // przekrojEndpoint(server);
 }

@@ -3,12 +3,12 @@ var proxy = require('http-proxy-middleware');
 var morgan = require('morgan');
 var config = {
     backendUrl: process.env.PROXY || 'http://localhost:8080',
-    port: process.env.PORT || 80,
+    port: process.env.PORT || 8000,
 };
 module.exports = function()
 {
     const app = express();
-    app.use(morgan('dev'));
+    // app.use(morgan('dev'));
     app.use('/api', proxy({target: config.backendUrl, changeOrigin: true}));
     app.use('/', express.static(__dirname + '/app'));
 

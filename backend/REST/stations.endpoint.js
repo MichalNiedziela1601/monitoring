@@ -10,6 +10,7 @@ module.exports = function (server)
         handler: function (req, res)
         {
             stationsManager.getStations().then((result) => {
+                console.log(result);
                 res(result);
             });
 
