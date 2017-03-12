@@ -3,12 +3,12 @@
  */
 (function(){
     'use strict';
-    function PunktPomiarowyController(){
+    function MeasurePointController(){
         var ctrl = this;
         ctrl.pomiar = 123;
     }
     angular.module('monitoring')
-        .controller('PunktPomiarowyController', PunktPomiarowyController);
+        .controller('MeasurePointController', MeasurePointController);
 
 
 })();

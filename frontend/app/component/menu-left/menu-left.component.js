@@ -4,18 +4,12 @@
 (function(){
     'use strict';
 
-    function MenuStation(){
-
-
-        return
-    }
     angular.module('monitoring')
         .component('menuStations', {
         templateUrl: 'component/menu-left/menu-left.tpl.html',
-
-        bindings: {
+            bindings: {
             stations: '='
-        }
+            }
     });
 
 })();

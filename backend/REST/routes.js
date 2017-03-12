@@ -1,7 +1,7 @@
 'use strict';
 
-const mainEndpoint = require('./main.endpoint');
+const stationsEndpoint = require('./stations.endpoint.js');
 
 module.exports = function(server){
-    mainEndpoint(server);
+    stationsEndpoint(server);
 }

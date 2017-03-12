@@ -1,4 +1,4 @@
 (function(){
     'use strict';
-    angular.module('monitoring', ['ngRoute']);
+    angular.module('monitoring', ['ngRoute','uiGmapgoogle-maps']);
 })();
