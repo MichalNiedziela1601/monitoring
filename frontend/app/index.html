@@ -1,32 +1,115 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pl" ng-app="monitoring">
 <head>
     <meta charset="UTF-8">
-    <title>Monitoring Powodziowy</title>
+    <base href="/">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Monitoring Powodziowy - Rzeka Wisłoka - Ropczyce - Wizualizacja</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Refresh" content="900">
+    <meta name="keywords" content="Monitoring Powodziowy" />
+    <meta name="description" content="Monitoring Powodziowy" />
+    <meta http-equiv="Content-Language" content="polish" />
+    <meta name="Autor" content="Bartlomiej Wiejaczka" />
+    <meta name="Firma" content="RWD PROSPECT" />
+    <meta name="Data" content="2007" />
+
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="bower_components/angular-bootstrap/ui-bootstrap-csp.css">
+    <link rel="stylesheet" href="bower_components/angular-aside/dist/css/angular-aside.min.css">
     <link rel="stylesheet" href="assets/styles/mystyle.css">
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'UA-16493882-4', 'auto');
+        ga('send', 'pageview');
+
+    </script>
+
 </head>
-<body ng-app="monitoring">
+
+
+<body >
 
 <div id="fb-root"></div>
-<script>(function(d, s, id) {
+<script>(function (d, s, id)
+{
     var js, fjs = d.getElementsByTagName(s)[0];
-    if (d.getElementById(id)) return;
-    js = d.createElement(s); js.id = id;
+    if (d.getElementById(id)) {
+        return;
+    }
+    js = d.createElement(s);
+    js.id = id;
     js.src = "//connect.facebook.net/pl_PL/sdk.js#xfbml=1&version=v2.8";
     fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));</script>
 
+<div ng-controller="MenuController as menuCtrl" ng-class="asideState.position">
+    <nav class="navbar back-darken">
+        <div class="container">
 
-<div ng-view class="container"></div>
+            <div class="row">
+                <div class="navbar-brand text-center lead">
+                    <div>
+                        <a href="http://www.monitoring.prospect.pl" class="navbar-main">MONITORING POWODZIOWY</a></div>
+                </div>
+                <div>
+                    <button role="button" class="btn btn-primary" id="menuAsideButton" ng-click="menuCtrl.openAside('left',true)">
+                        <i class="glyphicon glyphicon-menu-hamburger"></i> Menu
+                    </button>
+                </div>
+            </div>
+
+        </div>
+    </nav>
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-3 col-lg-2 col-sm-3">
+                <menu-stations stations="menuCtrl.stations" class="mediaVisible"></menu-stations>
+            </div>
+            <div class="col-md-9 col-lg-10 col-sm-9">
+                <div ng-view class="container-fluid"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer class="container-fluid back-darken">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 col-sm-6 col-xs-12 no-padding">
+                <div class="text-center">
+                    <div class="col-md-4 col-sm-4 col-xs-4">
 
 
-<footer>
-    <div class="text-center ">
-        <strong><p>System Monitoringu Powodziowego dostarczany jest przez firmę:</p>
-    <p>RWD PROSPECT Sp. z o.o. &nbsp; &nbsp;      ul. Klikowska 50, 33-100 Tarnów  &nbsp; &nbsp;
-            <a href="http://www.prospect.pl">www.prospect.pl</a>  &nbsp; &nbsp;
-        e-mail:   <a ng-href="mailto:monitoring@prospect.pl" target="_self">monitoring@prospect.pl</a></p></strong></div>
+                        <fb:like href="http://www.monitoring.prospect.pl/" layout="box_count" action="like" show_faces="true" share="true"></fb:like>
+
+                    </div>
+                    <div class="col-md-8 col-sm-8 col-xs-8">
+                        <div class="fb-page" data-href="https://www.facebook.com/rwdprospect" data-tabs="timeline" data-width="200" data-height="70"
+                             data-small-header="true" data-adapt-container-width="true" data-hide-cover="true" data-show-facepile="false">
+                            <blockquote cite="https://www.facebook.com/rwdprospect" class="fb-xfbml-parse-ignore">
+                                <a href="https://www.facebook.com/rwdprospect">RWD PROSPECT</a></blockquote>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center col-md-8 col-sm-6 col-xs-12">
+                <strong>
+                    <div class="col-md-10 col-sm-12">System Monitoringu Powodziowego dostarczany jest przez firmę:</div>
+
+                    <div class="col-md-10 col-sm-12"><span>RWD PROSPECT Sp. z o.o.</span>
+                        <span>ul. Klikowska 50, 33-100 Tarnów</span></div>
+                    <div class="col-md-10 col-sm-12"><a href="http://www.prospect.pl">www.prospect.pl</a> &nbsp; &nbsp;
+                        e-mail: <a ng-href="mailto:monitoring@prospect.pl" target="_self">monitoring@prospect.pl</a></div>
+                </strong></div>
+        </div>
+    </div>
 </footer>
 <!-- library-->
 <script src="bower_components/jquery/dist/jquery.min.js"></script>
@@ -35,6 +118,14 @@
 <script src="bower_components/lodash/dist/lodash.js"></script>
 <script src="bower_components/angular-simple-logger/dist/angular-simple-logger.min.js"></script>
 <script src="bower_components/angular-google-maps/dist/angular-google-maps.min.js"></script>
+<script src="bower_components/angular-bootstrap/ui-bootstrap.min.js"></script>
+<script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
+<script src="bower_components/angular-aside/dist/js/angular-aside.min.js"></script>
+<script src="bower_components/angular-resource/angular-resource.min.js"></script>
+<!--<script src="bower_components/bootstrap-ui-datetime-picker/dist/datetime-picker.tpls.js"></script>-->
+<script src="bower_components/bootstrap-ui-datetime-picker/dist/datetime-picker.min.js"></script>
+<script src="bower_components/ng-lodash/build/ng-lodash.min.js"></script>
+<!--config-->
 <!--config-->
 <script src="app.module.js"></script>
 <script src="app.config.js"></script>
@@ -43,8 +134,11 @@
 <!--controllers-->
 <script src="mainView/main-view.controller.js"></script>
 <script src="measurePoint/measurePoint.controller.js"></script>
+<script src="menuNavbar/menu.controller.js"></script>
+<script src="menuNavbar/menu-side.controller.js"></script>
 <!--services-->
 <script src="services/stations.service.js"></script>
+<script src="services/punktWodny.sercvice.js"></script>
 <!--components-->
 <script src="component/menu-left/menu-left.component.js"></script>
 

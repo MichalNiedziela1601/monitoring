@@ -2,7 +2,7 @@
 {
     'use strict';
 
-    function MainViewController($location, StationsFactory, uiGmapGoogleMapApi)
+    function MainViewController($location, uiGmapGoogleMapApi)
     {
         var ctrl = this;
         var id = 1;
@@ -43,12 +43,14 @@
             StationsFactory.getStations().then(function (data)
             {
                 ctrl.stations = data;
+            }).catch(function(err){
+                console.log(err);
             });
         }
 
         function init()
         {
-            getStations();
+            // getStations();
             uiGmapGoogleMapApi.then(function (maps)
             {
                 ctrl.map = {center: {latitude: 50.015294, longitude: 21.673048}, zoom: 11};

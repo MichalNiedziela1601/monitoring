@@ -1,14 +1,44 @@
 @main-color: #DBD4BA;
+@color-darken: #B9AF8C;
+@color-dark: #9A8E63;
 
 body {
   background-color: @main-color;
 }
 
 footer {
-  margin-top: 4em;
-  margin-bottom: 2em;
+  padding-top: 4em;
+  padding-bottom: 2em;
 }
 
+.back-darken {
+  background-color: lighten(@color-darken, 7%) !important;
+}
+
+.back-dark {
+  background-color: lighten(@color-dark, 15%) !important;
+}
+
+.back-main {
+  background-color: @main-color !important;
+}
+
+.modal-content {
+
+  background-color: @main-color;
+}
+
+.navbar {
+  border: none;
+  min-height: 4em;
+  min-width: 100%;
+}
+
+.navbar-main {
+  padding: 3px 0; color: #3B5998;
+  font-family: 'Helvetica Neue',Helvetica,Arial,'lucida grande',tahoma,verdana,arial,sans-serif; font-size: 13px; font-weight: 700;
+  line-height: 16.6333px; text-align: left; text-decoration: none;
+}
 
 .obsadzona {
   padding-left: 2em;
@@ -41,6 +71,119 @@ footer {
   margin-top: 2em;
 }
 
-.angular-google-map-container { height: 600px; }
+.angular-google-map-container {
+  height: 600px;
+  .responsive(767px, {
+    height: 350px
+  })
+}
+
+.no-padding {
+  .responsive(375px, { padding: 0;
+  })
+}
+
+.responsive(@maxWidth, @rules) {
+  @media only screen and (max-width: @maxWidth) {
+    @rules();
+  }
+}
+
+.mediaVisible {
+  .responsive(767px, { display: none; })
+}
+
+#menuAsideButton {
+  display: none;
+  .responsive(767px, {
+    display: inline-block;
+    float: right; margin-right: 1.5em;
+    margin-top: 1em;
+  })
+}
+
+thead {
+  th {
+    vertical-align: middle;
+    text-align: center;
+  }
+}
+
+.border() {
+  border: 2px solid black !important;
+}
+.table {
+  thead, tbody, tr, td, th {
+    .border();
+    text-align: center;
+  }
+}
+
+.generate-pd-top(@n, @i: 0) when (@i =< @n) {
+  .pd-top-@{i} {
+    padding-top: (@i * 10px);
+  }
+  .generate-pd-top(@n, (@i + 1));
+}
+
+.generate-pd-top(8);
+
+.generate-mar-top(@n, @i: 0) when (@i =< @n) {
+  .mar-top-@{i} {
+    margin-top: (@i * 10px);
+  }
+  .generate-mar-top(@n, (@i + 1));
+}
+
+.generate-mar-top(8);
+
+.generate-mar-bottom(@n, @i: 0) when (@i =< @n) {
+  .mar-bottom-@{i} {
+    margin-bottom: (@i * 10px);
+  }
+  .generate-mar-bottom(@n, (@i + 1));
+}
+
+.generate-mar-bottom(8);
+.poziom_ostrz {
+  background-color: #fa0;
+  color: #000;
+}
+
+.poziom_alarm {
+  background-color: #f00;
+  color: #000;
+}
+
+.wykres_h1 {
+  height: 270px;
+  max-width: 100%;
+}
+
+.image-contener {
+  > img {
+    max-height: 350px;
+    width: 100%;
+  }
+}
+
+.image-contener2 {
+  max-width: 80% !important;
+}
+
+.panel-heading {
+  padding: 4px 15px 0px 15px;
+}
+
+.menu {
+  li {
+    margin-bottom: 4px;
+    a {
+      color: black;
+
+    }
+  }
+}
+
 
 
